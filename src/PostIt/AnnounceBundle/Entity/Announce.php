@@ -16,6 +16,8 @@ class Announce
     {
     // Par défaut, la date de l'annonce est la date d'aujourd'hui
     $this->date = new \Datetime();
+    $this->published = false;
+
     }
 
     /**
@@ -57,14 +59,14 @@ class Announce
     /**
      * @var string
      *
-     * @ORM\Column(name="street", type="string", length=255)
+     * @ORM\Column(name="street", type="string", length=255, nullable=true)
      */
     private $street;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="company", type="string", length=255, nullable=true)
+     * @ORM\Column(name="company", type="string", length=255)
      */
     private $company;
 

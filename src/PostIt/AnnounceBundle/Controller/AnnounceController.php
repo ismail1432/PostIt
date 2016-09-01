@@ -40,7 +40,7 @@ class AnnounceController extends Controller
 
     		$request->getSession()->getFlashbag()->add('notice', 'Annonce bien enregistrée.');
 
-    		return $this->redirecToRoute('postit_announce_view', array('id' => $announce->getId()));
+    		return $this->redirectToRoute('postit_announce_view', array('id' => $announce->getId()));
     	}
     	return $this->render('PostItAnnounceBundle:Announce:add.html.twig', array(
       'form' => $form->createView(),
