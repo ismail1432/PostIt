@@ -12,7 +12,8 @@
 	<div class="col-md-8">
 		{% for announce in listAnnounces %}
 		<div class="panel panel-info">
-			<div class="panel-heading"><h4><a href="#">{{ announce.title }}</a></h4></div>
+
+			<div class="panel-heading"><h4><a href="{{ path('postit_announce_view', {'id': announce.id}) }}">{{ announce.title }}</a></h4></div>
 		<div class="panel-body">
 		<h5><span class="glyphicon glyphicon-info-sign"></span> {{ announce.company }}<h5>
 		<h6><span class="glyphicon glyphicon-map-marker"></span> {{ announce.city }}<h6>

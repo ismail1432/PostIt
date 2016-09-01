@@ -2,22 +2,21 @@
 
 {% block post_it_body %}
 
-
-<div class="row">
-	<div class="col-md-6 col-md-offset-3">
-		<div class="panel panel-success">
- 
-  <div class="panel-heading"><h2> {{ announce.title }}</h2></div>
-		<div class="panel-body">
-		<h4><span class="glyphicon glyphicon-triangle-right"></span> {{ announce.content }}<h4>
-		<h4><span class="glyphicon glyphicon-info-sign"></span> {{ announce.company }}<h4>
-		<h4><span class="glyphicon glyphicon-map-marker"></span> {{ announce.city }}<h4>
-		<h4><span class="glyphicon glyphicon-user"></span> {{ announce.user.username }}</h4>
-		<h4><span class="glyphicon glyphicon-calendar"> </span> {{ announce.date|date('d/m/Y') }}</h4>
-   
-  </div>
-</div>
- </div>
+<div id="view">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-success">
+  				<div class="panel-heading"><h2 class="text-center"> {{ announce.title }}</h2></div>
+				<div class="panel-body">
+					<h4><span class="glyphicon glyphicon-triangle-right"></span> {{ announce.content }}<h4>
+					<h4><span class="glyphicon glyphicon-info-sign"></span> {{ announce.company }}<h4>
+					<h4><span class="glyphicon glyphicon-map-marker"></span> {{ announce.city }}<h4>
+					<h4><span class="glyphicon glyphicon-user"></span> {{ announce.user.username }}</h4>
+					<h4><span class="glyphicon glyphicon-calendar"> </span> {{ announce.date|date('d/m/Y') }}</h4>
+      			</div>
+  			</div>
+		</div>
+ 	</div>
 </div>
 
 

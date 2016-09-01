@@ -9,3 +9,9 @@ postit_announce_view:
       _controller:  PostItAnnounceBundle:Announce:view
     requirements:
       id: \d+
+
+postit_announce_add:
+    path:     /add
+    defaults:
+      _controller:   PostItAnnounceBundle:Announce:add
+

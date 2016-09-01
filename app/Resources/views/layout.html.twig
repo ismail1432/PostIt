@@ -10,6 +10,7 @@
  {% stylesheets 'bundles/postitannounce/css/*' filter='cssrewrite' %}
   <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
 {% endstylesheets %}
+    <script src="https://use.fontawesome.com/708d46d369.js"></script>
   </head>
   <body>
   <div class="container">
@@ -17,15 +18,15 @@
      {{ include('PostItAnnounceBundle:Announce:banniere.html.twig') }}
     {% endblock %}
     <div id="header">
-    
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="text-center">
+      <a class="btn btn-base-light btn-lg" href="{{ path('postit_announce_home')}}"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
       <a class="btn btn-base-light btn-lg" href="#">Publier une annonce</a>
       <a class="btn btn-base-light btn-lg" href="#">Se Connecter</a>
     </div>
     </div>
   </div>
-
+     
         {% block post_it_body %}
         {% endblock %}
       </div>
