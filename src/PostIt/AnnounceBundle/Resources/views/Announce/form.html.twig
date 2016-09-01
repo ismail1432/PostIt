@@ -5,44 +5,71 @@
 <div class="well">
   {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
 
-  {# Les erreurs générales du formulaire. #}
-  {{ form_errors(form) }}
-
-
   {# Génération manuelle et éclatée : #}
   <div class="form-group">
-    {# Génération du label. #}
-    {{ form_label(form.title, "Titre de l'annonce", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
-
-    {# Affichage des erreurs pour ce champ précis. #}
-    {{ form_errors(form.title) }}
-
-    <div class="col-sm-10">
+    <div class="col-md-6 col-md-offset-2">
       {# Génération de l'input. #}
-      {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+      {{ form_widget(form.title, {'attr': {'class': 'form-control', 'placeholder': 'Titre de l\'annonce'}}) }}
+      {{ form_errors(form.title) }}
     </div>
   </div>
-
-  {# Idem pour un autre champ. #}
   <div class="form-group">
-    {{ form_label(form.content, "Contenu de l'annonce", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
-    {{ form_errors(form.title) }}
-    <div class="col-sm-10">
-      {{ form_widget(form.content, {'attr': {'class': 'form-control'}}) }}
+    <div class="col-md-6 col-md-offset-2">
+      {# Génération de l'input. #}
+      {{ form_widget(form.company, {'attr': {'class': 'form-control', 'placeholder': 'Nom de Votre Societe'}}) }}
+      {{ form_errors(form.company) }}
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-6 col-md-offset-2">
+      {# Génération de l'input. #}
+      {{ form_widget(form.city, {'attr': {'class': 'form-control', 'placeholder': 'Ville'}}) }}
+      {{ form_errors(form.city) }}
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-7 col-md-offset-2">
+      {# Génération de l'input. #}
+      {{ form_widget(form.content, {'attr': {'class': 'form-control', 'placeholder': 'Contenu de l\'annonce'}}) }}
+      {{ form_errors(form.content) }}
     </div>
   </div>
 
-  {{ form_row(form.user) }}
-  {{ form_row(form.published) }}
+  <div class="form-group">
+    <div class="col-md-6 col-md-offset-2">
+      {# Génération de l'input. #}
+      {{ form_widget(form.user.username, {'attr': {'class': 'form-control', 'placeholder': 'Votre Nom'}}) }}
+      {{ form_errors(form.user.username) }}
+    </div>
+  </div>
 
-  {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
-  {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+  <div class="form-group">
+    <div class="col-md-6 col-md-offset-2">
+      {# Génération de l'input. #}
+      {{ form_widget(form.user.password, {'attr': {'class': 'form-control', 'placeholder': 'Mot de passe'}}) }}
+      {{ form_errors(form.user.password) }}
+    </div>
+  </div>
 
-  {# Génération automatique des champs pas encore écrits.
-     Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
-     et tous les champs cachés (type « hidden »). #}
+  <div class="form-group">
+    <div class="col-md-6 col-md-offset-2">
+      {# Génération de l'input. #}
+      {{ form_widget(form.user.email, {'attr': {'class': 'form-control', 'placeholder': 'Adresse Mail'}}) }}
+      {{ form_errors(form.user.email) }}
+    </div>
+  </div>
+
+  
+  <div class="form-group">
+    <div class="col-md-6 col-md-offset-2">
+      {# Génération de l'input. #}
+       {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+    </div>
+  </div>
+  
+ 
+
   {{ form_rest(form) }}
-
   {# Fermeture de la balise <form> du formulaire HTML #}
   {{ form_end(form) }}
 </div>

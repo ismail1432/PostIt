@@ -25,10 +25,10 @@ class AnnounceType extends AbstractType
             ->add('title',          TextType::class)
             ->add('content',        TextareaType::class)
             ->add('city',           TextType::class)
-            ->add('street',         TextType::class)
+         //   ->add('street',         TextType::class)
             ->add('company',        TextType::class)
-            ->add('date',           DateTimeType::class)
-            ->add('published',      CheckboxType::class, array('required' => false))
+          //  ->add('date',           DateTimeType::class)
+        //    ->add('published',      CheckboxType::class, array('required' => false))
             ->add('user',           UserType::class)
             ->add('save',           SubmitType::class);
     }

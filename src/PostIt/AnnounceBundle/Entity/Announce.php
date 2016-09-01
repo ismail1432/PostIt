@@ -19,7 +19,7 @@ class Announce
     }
 
     /**
-    * @ORM\ManyToOne(targetEntity="PostIt\UserBundle\Entity\User", inversedBy="announces")
+    * @ORM\ManyToOne(targetEntity="PostIt\UserBundle\Entity\User", inversedBy="announces", cascade={"persist"})
     * @ORM\JoinColumn(nullable=false)
     */
     private $user;
@@ -64,7 +64,7 @@ class Announce
     /**
      * @var string
      *
-     * @ORM\Column(name="company", type="string", length=255)
+     * @ORM\Column(name="company", type="string", length=255, nullable=true)
      */
     private $company;
 
