@@ -2,7 +2,7 @@
 
 namespace PostIt\AnnounceBundle\Controller;
 
-
+use PostIt\AnnounceBundle\Entity\Announce;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -21,5 +21,12 @@ class AnnounceController extends Controller
         return $this->render('PostItAnnounceBundle:Announce:index.html.twig',
         		array('listAnnounces' => $listAnnounces)
         	);
+    }
+
+    public function viewAction(Announce $announce){
+		
+		return $this->render('PostItAnnounceBundle:Announce:view.html.twig',
+        		array('announce' => $announce)
+        	);  	
     }
 }

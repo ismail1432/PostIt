@@ -2,3 +2,10 @@ postit_announce_home:
     path:     /
     defaults: 
         _controller: PostItAnnounceBundle:Announce:index
+
+postit_announce_view:
+    path:     /announce/{id}
+    defaults:
+      _controller:  PostItAnnounceBundle:Announce:view
+    requirements:
+      id: \d+
