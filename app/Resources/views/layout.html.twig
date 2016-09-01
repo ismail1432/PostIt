@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}Post It Announce{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+ {% stylesheets 'bundles/postitannounce/css/*' filter='cssrewrite' %}
+  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+  </head>
+  <body>
+  <div class="container">
+    {% block banniere_body %}
+     {{ include('PostItAnnounceBundle:Announce:banniere.html.twig') }}
+    {% endblock %}
+    <div id="header">
+    
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+      <a class="btn btn-base-light btn-lg" href="#">Publier une annonce</a>
+      <a class="btn btn-base-light btn-lg" href="#">Se Connecter</a>
+    </div>
+    </div>
+  </div>
+
+        {% block post_it_body %}
+        {% endblock %}
+      </div>
+    </div>
+
+    <hr>
+        <footer>
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+      <p>Post It © {{ 'now'|date('Y') }}.</p>
+    </div>
+      </div>
+    </footer>
+
+  </div>
+
+  {% block javascripts %}
+    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  {% endblock %}
+
+</body>
+</html>

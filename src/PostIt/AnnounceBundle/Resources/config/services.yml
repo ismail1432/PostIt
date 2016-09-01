@@ -1,0 +1,4 @@
+services:
+#    post_it_announce.example:
+#        class: PostIt\AnnounceBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

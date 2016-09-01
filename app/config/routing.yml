@@ -1,0 +1,7 @@
+post_it_announce:
+    resource: "@PostItAnnounceBundle/Resources/config/routing.yml"
+    prefix:   /
+
+post_it_user:
+    resource: "@PostItUserBundle/Resources/config/routing.yml"
+    prefix:   /

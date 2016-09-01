@@ -1,0 +1,4 @@
+postit_announce_home:
+    path:     /
+    defaults: 
+        _controller: PostItAnnounceBundle:Announce:index

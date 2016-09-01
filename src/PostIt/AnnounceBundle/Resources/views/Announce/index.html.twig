@@ -1,0 +1,39 @@
+{% extends "::layout.html.twig" %}
+
+{% block post_it_body %}
+
+  <h1 id="lastannonces" class="text-center"> <span class="glyphicon glyphicon-pencil"></span> annonces...</h1>
+
+
+
+
+
+<div class="row">
+	<div class="col-md-8">
+		{% for announce in listAnnounces %}
+		<div class="panel panel-info">
+			<div class="panel-heading"><h4><a href="#">{{ announce.title }}</a></h4></div>
+		<div class="panel-body">
+		<h5><span class="glyphicon glyphicon-info-sign"></span> {{ announce.company }}<h5>
+		<h6><span class="glyphicon glyphicon-map-marker"></span> {{ announce.city }}<h6>
+		<h6><span class="glyphicon glyphicon-user"></span> {{ announce.user.username }}</h6>
+		<h6><span class="glyphicon glyphicon-calendar"> </span> {{ announce.date|date('d/m/Y') }}</h6>
+		</div>
+		</div>
+
+		{% endfor %}
+	</div>
+
+	
+	<div class="col-md-4">
+	
+		{% for announce in listAnnounces %}
+			<div class="well">
+	VOTRE PUB ICI
+	</div>
+	{% endfor %}
+	
+	</div>
+</div>
+
+{% endblock %}
