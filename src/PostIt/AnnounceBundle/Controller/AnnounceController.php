@@ -38,7 +38,7 @@ class AnnounceController extends Controller
     		$em->persist($announce);
     		$em->flush();
 
-    		$request->getSession()->getFlashbag()->add('notice', 'Annonce bien enregistrée.');
+    		$request->getSession()->getFlashbag()->add('notice', 'Voici votre annonce en attente de validation.');
 
     		return $this->redirectToRoute('postit_announce_view', array('id' => $announce->getId()));
     	}
@@ -46,6 +46,35 @@ class AnnounceController extends Controller
       'form' => $form->createView(),
     ));
   }
+
+  	public function deleteAction(Announce $announce, Request $request){
+
+  		$form = $this->createFormBuilder()->getForm();
+  		$passwordAnnounce = $announce->getUser()->getPassword();
+
+  			if((($request->isMethod('POST')) && ($form->handleRequest($request)->isValid())) && ($passwordAnnounce == $_POST['motdepasse'])){
+
+	  					$em = $this->getDoctrine()->getManager();
+	    				$em->remove($announce);
+	    				$em->flush();
+	    				
+	    				$request->getSession()->getFlashBag()->add('notice', "Annonce bien supprimée");
+      					return $this->redirect($this->generateUrl('postit_announce_home'));	
+	    				
+	    }
+	    				else{
+
+  							if(($request->isMethod('POST')) && ($passwordAnnounce != $_POST['motdepasse']))
+  							{
+  								$request->getSession()->getFlashBag()->add('notice', "Mauvais mot de passe");
+  							}
+      					return $this->render('PostItAnnounceBundle:Announce:delete.html.twig',
+        				array('announce' => $announce,
+        				'form' => $form->createView(),
+        				'pass' => $passwordAnnounce
+        			));
+  				}
+  	}
 
 
 }

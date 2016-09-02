@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 
 class UserType extends AbstractType
@@ -20,7 +21,7 @@ class UserType extends AbstractType
         $builder
             ->add('username', TextType::class)
             ->add('password', TextType::class)
-            ->add('email', TextType::class)
+            ->add('email', EmailType::class)
         ;
     }
     

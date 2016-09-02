@@ -15,3 +15,9 @@ postit_announce_add:
     defaults:
       _controller:   PostItAnnounceBundle:Announce:add
 
+postit_announce_delete:
+    path:    /delete/{id}
+    defaults:
+      _controller: PostItAnnounceBundle:Announce:delete
+      requirements:
+      id: \d+

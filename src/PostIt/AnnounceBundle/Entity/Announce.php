@@ -3,6 +3,8 @@
 namespace PostIt\AnnounceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Announce
@@ -21,7 +23,7 @@ class Announce
     }
 
     /**
-    * @ORM\ManyToOne(targetEntity="PostIt\UserBundle\Entity\User", inversedBy="announces", cascade={"persist"})
+    * @ORM\ManyToOne(targetEntity="PostIt\UserBundle\Entity\User", inversedBy="announces", cascade={"persist", "remove"})
     * @ORM\JoinColumn(nullable=false)
     */
     private $user;
@@ -39,6 +41,8 @@ class Announce
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+     * @Assert\Length(min=3)
+     * @Assert\NotBlank()
      */
     private $title;
 
@@ -46,6 +50,8 @@ class Announce
      * @var string
      *
      * @ORM\Column(name="content", type="text")
+     * @Assert\Length(min=100)
+     * @Assert\NotBlank()
      */
     private $content;
 
@@ -67,6 +73,8 @@ class Announce
      * @var string
      *
      * @ORM\Column(name="company", type="string", length=255)
+     * @Assert\Length(min=3)
+     * @Assert\NotBlank()
      */
     private $company;
 

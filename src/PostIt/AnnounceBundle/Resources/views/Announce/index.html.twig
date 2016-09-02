@@ -4,7 +4,13 @@
 
   <h1 id="lastannonces" class="text-center"> <span class="glyphicon glyphicon-pencil"></span> annonces...</h1>
 
-
+{% for message in app.session.flashbag.get('notice') %}
+			<div class="alert alert-warning" role="alert">
+      {# On affiche tous les messages flash dont le nom est « info » #}
+      
+        <p> {{ message }}</p>
+    </div>
+      {% endfor %}
 
 
 

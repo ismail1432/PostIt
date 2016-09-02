@@ -11,32 +11,21 @@
       </div>
 
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-success">
-  				<div class="panel-heading"><h2 class="text-center"> {{ announce.title }}</h2></div>
-				<div class="panel-body">
+		
+  				<h2 class="text-center">Vous êtes sure de supprimer l'annonce " {{ announce.title }} " ? </h2>
+				
 					<h4><span class="glyphicon glyphicon-triangle-right"></span> {{ announce.content }}</h4>
 					<h4><span class="glyphicon glyphicon-info-sign"></span> {{ announce.company }}</h4>
 					<h4><span class="glyphicon glyphicon-map-marker"></span> {{ announce.city }}</h4>
 					<h4><span class="glyphicon glyphicon-user"></span> {{ announce.user.username }}</h4>
+					<h4><span class="glyphicon glyphicon-user"></span> {{ announce.user.password }}</h4>
+					<h4><span class="glyphicon glyphicon-user"></span> {{ pass }}</h4>
 					<h4><span class="glyphicon glyphicon-calendar"> </span> {{ announce.date|date('d/m/Y') }}</h4>
-					<div>
-  <p>
-    <a href="{{ path('postit_announce_home') }}" class="btn btn-info">
-      <i class="glyphicon glyphicon-chevron-left"></i>
-      Retour à la liste
-    </a>
-    <a href="#" class="btn btn-warning">
-      <i class="glyphicon glyphicon-edit"></i>
-      Modifier l'annonce
-    </a>
-    <a href="{{ path('postit_announce_delete', {'id': announce.id}) }}" class="btn btn-danger">
-      <i class="glyphicon glyphicon-trash"></i>
-      Supprimer l'annonce
-    </a>
-  </p>
-      			</div>
-  			</div>
+      			<form action="{{ path('postit_announce_delete', {'id': announce.id}) }}" method="post">
+      				 <label>Votre Mot de passe</label> : <input type="text" name="motdepasse" />
+ 					<input type="submit" value="Supprimer" class="btn btn-danger" />
+    				{{ form_rest(form) }}
+      			</form>
 		</div>
  </div>
 </div>

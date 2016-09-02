@@ -10,4 +10,5 @@ namespace PostIt\UserBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
+	
 }

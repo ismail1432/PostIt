@@ -20,13 +20,13 @@
     <div id="header">
     <div class="row">
       <div class="text-center">
-      <a class="btn btn-base-light btn-lg" href="{{ path('postit_announce_home')}}"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
-      <a class="btn btn-base-light btn-lg" href="#">Publier une annonce</a>
-      <a class="btn btn-base-light btn-lg" href="#">Se Connecter</a>
+      <a class="btn btn-base-light btn-md" href="{{ path('postit_announce_home')}}"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+      <a class="btn btn-base-light btn-md" href="{{ path('postit_announce_add')}}">Publier une annonce</a>
+      <a class="btn btn-base-light btn-md" href="#">Se Connecter</a>
     </div>
     </div>
   </div>
-     
+
         {% block post_it_body %}
         {% endblock %}
       </div>
