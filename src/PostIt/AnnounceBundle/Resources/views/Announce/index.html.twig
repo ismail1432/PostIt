@@ -2,8 +2,6 @@
 
 {% block post_it_body %}
 
-  <h1 id="lastannonces" class="text-center"> <span class="glyphicon glyphicon-pencil"></span> annonces...</h1>
-
 {% for message in app.session.flashbag.get('notice') %}
 			<div class="alert alert-warning" role="alert">
       {# On affiche tous les messages flash dont le nom est « info » #}
@@ -11,6 +9,46 @@
         <p> {{ message }}</p>
     </div>
       {% endfor %}
+<div class="row">
+	<div class="col-md-8">
+	<div class="well well-sm">
+<form>
+    <div class="form-group">
+      <div class="col-xs-4">
+        <input type="text" class="form-control" id="motcle" placeholder="Mot cle">
+      </div>
+      	<div class="col-xs-3">
+        <div class="form-group">
+     		<select class="form-control" name="Categorie" id="Categorie">
+			<option>Categorie</option>
+  			<option>Immobiler</option>
+  			<option>Alimentation</option>
+  			<option>Voitures</option>
+  			<option>Commerce</option>
+			</select>
+  		</div>
+      	</div>
+      	<div class="col-xs-3">
+        <div class="form-group">
+    		<select class="form-control" name="Categorie" id="Categorie">
+			<option>Ou ?</option>
+  			<option>Immobiler</option>
+  			<option>Alimentation</option>
+  			<option>Voitures</option>
+			<option>Commerce</option>
+			</select>
+  		</div>
+      	</div>
+       <button type="submit" class="btn btn-info btn-sm">Chercher</button>
+    	</div>
+  </form>
+  
+</div>
+</div>
+<div class="col-md-4">
+ <button id="addannounce" type="button" class="btn btn-warning btn-lg" >Deposer une annonce</button>
+</div>
+</div>
 
 
 

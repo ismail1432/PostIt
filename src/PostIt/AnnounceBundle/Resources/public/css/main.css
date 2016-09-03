@@ -4,7 +4,7 @@
 }
 
 body { 
-background-color: rgba(252, 184, 95, 1);
+background-color: #ecf0f1;
 font-family: 'verdana', sans-serif;
 }
 
@@ -21,29 +21,24 @@ font-family: 'verdana', sans-serif;
 	margin-top: 100px
 }
 #view{
-	
 	margin-top: 100px
-
 	}
-#header{
-	height: 100px;
-}
+
 #formsearch{
 	height: 60px;
 }
 
 .btn-base-light {
-    color: #FFFFFF;
-    background-color: transparent;
-    border-color: #FFFFFF;
+    color: black;
+    background-color: #e74c3c;
     border-width: 2px;
-    margin-top: 70px;
 }
 .btn-base-light:hover{
 	color: rgba(252, 184, 95, 1);
 	background-color: white;
 
 }
+
 
 #lastannonces {
 	margin: 1em 0 .6em 0;
