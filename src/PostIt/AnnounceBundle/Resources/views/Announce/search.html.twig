@@ -1,0 +1,46 @@
+<div id="searchbar">
+	<div class="container">
+	<div class="row">
+	<div class="col-md-8">
+<form id="form1">
+    <div class="form-group">
+      <div class="col-xs-4">
+        <input type="text" class="form-control" id="motcle" placeholder="Mot cle">
+      </div>
+      	<div class="col-xs-3">
+        <div class="form-group">
+     		<select class="form-control" name="Categorie" id="Categorie">
+			<option>Categorie</option>
+  			<option>Immobiler</option>
+  			<option>Alimentation</option>
+  			<option>Voitures</option>
+  			<option>Commerce</option>
+			</select>
+  		</div>
+      	</div>
+      	<div class="col-xs-3">
+        <div class="form-group">
+    		<select class="form-control" name="Categorie" id="Categorie">
+			<option>Ou ?</option>
+  			<option>Immobiler</option>
+  			<option>Alimentation</option>
+  			<option>Voitures</option>
+			<option>Commerce</option>
+			</select>
+  		</div>
+      	</div>
+       <button type="submit" class="btn btn-info btn-sm">Go !!</button>
+    	</div>
+  </form>
+</div>
+<div class="col-md-4">
+	<div class="text-left">
+    <a id="home" href="{{ path('postit_announce_home') }}" class="btn btn-primary btn-lg">
+      <i class="glyphicon glyphicon-home"></i>
+    </a>
+ <a id="addannounce" type="button" class="btn btn-warning btn-lg"href="{{ path('postit_announce_add')}}">Deposer une annonce (gratuit)</a>
+</div>
+</div>
+</div>
+</div>
+</div>

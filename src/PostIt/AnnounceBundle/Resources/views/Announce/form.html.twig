@@ -1,8 +1,8 @@
 {# src/OC/PlatformBundle/Resources/views/Advert/form.html.twig #}
-
-<h3>Formulaire d'annonce</h3>
-
-<div class="well">
+{% include "PostItAnnounceBundle:Announce:search.html.twig" %}
+<div class="container">
+<div class="row">
+<div class="formadd">
   {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
 
   {# Génération manuelle et éclatée : #}
@@ -72,4 +72,6 @@
   {{ form_rest(form) }}
   {# Fermeture de la balise <form> du formulaire HTML #}
   {{ form_end(form) }}
+</div>
+</div>
 </div>
